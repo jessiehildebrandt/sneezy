@@ -1,0 +1,115 @@
+========================================
+== Installation Option 1 ===============
+== Building a Dedicated SNeezy System ==
+========================================
+---------------------------
+-- Setting Up the System --
+---------------------------
+
+1.) Install and set up the base system.
+Find a good base system here: https://sourceforge.net/projects/minibian/
+
+2.) Install the required packages:
+apt-get install joystick python-{yaml,pygame} alsa-utils libglib2.0-0 cpufrequtils
+
+3.) Install any dependencies missing for pisnes/snes9x, if any. (libglib2.0-0 is usually the only missing library.)
+
+4.) Copy the "sneezy" folder into the "root" folder on the file system.
+It should look like this: /root/sneezy
+
+5.) Copy the "profile" file from "extra/profile" to "/root/.profile" on the file system.
+Make sure that when you copy it over the destination file has the period before its name.
+
+6.) Set up the system to automatically log you in as the root user. You'll never need to plug in a keyboard!
+Guide: http://elinux.org/RPi_Debian_Auto_Login
+
+EXAMPLE INSTALLATION:
+# apt-get install joystick python-{yaml,pygame} alsa-utils libglib2.0-0 cpufrequtils
+# cp -r ./sneezy /root/sneezy
+# cp ./extra/profile /root/.profile
+
+---------------------------------------
+-- (Optional) Configuring the Kernel --
+---------------------------------------
+If you'd like, you may use the provided kernel settings.
+To do so, copy over the config.txt and cmdline.txt files from the "extra" folder to the /boot partition on the file system.
+WARNING: If you've already altered the config.txt and cmdline.txt files, this may cause errors.
+      ** If this is the case, you will want to copy over any desired settings from these files by hand.
+      ** The provided overclocking settings may need to be tweaked for your device.
+
+------------------------
+-- Cleaning Things Up --
+------------------------
+If you'd like, you have the option of removing SSH, text editors, or any other unused packages to make the system cleaner.
+Try not to break things.
+
+-------------------------
+-- (Optional) Updating --
+-------------------------
+(Optionally) Update the firmware using rpi-update.
+(Optionally) Update the system by running [apt-get update && apt-get dist-upgrade].
+
+---------------------------------
+-- Installing ROMs and Box Art --
+---------------------------------
+Place ROMs inside the "/root/sneezy/roms" directory, or the directory specified in the configuration file.
+The location for box art defaults to the "/root/sneezy/boxart" directory, but can be specified in the configuration file.
+Box art images should be 225x225 pixels, with the actual image contents being between (46, 47) and (178, 106).
+A box art template is provided in the "/root/sneezy" directory.
+Box art should have the same name as the ROM file to be detected. Example:
+	("roms/Super Punch-Out!!.sfc" --> "boxart/Super Punch-out!!.png")
+
+---------------------------------------
+-- Configuring SNeezy to Your Liking --
+---------------------------------------
+SNeezy can be configured through the config.yaml file in the "/root/sneezy/" directory.
+See the Configuring.txt file for more information on configuring SNeezy.
+
+-------------
+-- Finally --
+-------------
+Plug in a SNES controller (or a compatible controller of your choice), boot it up, and enjoy!
+(It works by default with the Buffalo SNES USB Controller. Try it out!)
+
+================================================
+== Installation Option 2 =======================
+== Installing SNeezy on a Pre-Existing System ==
+================================================
+
+WARNING: SNeezy is designed and programmed to run on a dedicated system.
+      ** It may not function as desired outside of its intended purpose.
+
+------------------------------
+-- Install the Dependencies --
+------------------------------
+1.) Install the required packages:
+apt-get install joystick python-{yaml,pygame} alsa-utils libglib2.0-0 cpufrequtils
+
+2.) Install any dependencies missing for pisnes/snes9x, if any. (libglib2.0-0 is usually the only missing library.)
+
+----------------------
+-- Unpacking SNeezy --
+----------------------
+Copy the "sneezy" folder from "Root Directory/root/sneezy" to a location of your choice on the system.
+
+---------------------------------
+-- Installing ROMs and Box Art --
+---------------------------------
+Place ROMs inside the "sneezy/roms" directory, or the directory specified in the configuration file.
+The location for box art defaults to the "sneezy/boxart" directory, but can be specified in the configuration file.
+Box art images should be 225x225 pixels, with the actual image contents being between (46, 47) and (178, 106).
+A box art template is provided at "sneezy/Box Art Template.png".
+Box art should have the same name as the ROM file to be detected. Example:
+	("roms/Super Punch-Out!!.sfc" --> "boxart/Super Punch-out!!.png")
+
+---------------------------------------
+-- Configuring SNeezy to Your Liking --
+---------------------------------------
+SNeezy can be configured through the config.yaml file in the "/root/sneezy/" directory.
+See the Configuring.txt file for more information on configuring SNeezy.
+
+-------------
+-- Finally --
+-------------
+Plug in a SNES controller (or a compatible controller of your choice), launch SNeezy ("python ./launch-sneezy.py"), and enjoy!
+(It works by default with the Buffalo SNES USB Controller. Try it out!)

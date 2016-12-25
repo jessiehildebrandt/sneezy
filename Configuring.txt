@@ -1,0 +1,103 @@
+------------------------
+-- Configuring SNeezy --
+------------------------
+SNeezy should work with most setups out of the box, but can be configured to your liking.
+
+-----------------
+-- config.yaml --
+-----------------
+= [Options] =
+
+screen_width, screen_height
+Sets the resolution to screen_width by screen_height. Setting the width or height to zero will cause the window to have the same width or height as the screen.
+Default: 0, 0
+
+max_fps
+Limits the framerate in the menus to the specified setting. Setting it too low causes delays, setting it too high may stress the system.
+Default: 30
+
+fullscreen
+If set to Yes, opens SNeezy in a fullscreen window. If set to No, opens SNeezy in a standard window.
+Default: Yes
+
+font_size
+Sets the font size to be used in the menus.
+Default: 26
+
+header_height
+Sets the height of the header at the top of the screen. The value is a percentage of the screen height, in decimal form. (0.175 = 17.5%)
+Default: 0.175
+
+item_gap
+Sets the vertical gap between menu items. The value is a percentage of the screen height, in decimal form. (0.05 = 5%)
+Default: 0.05
+
+icon_size
+Sets the size of the images displayed for each item on the menu. The value is a percentage of the screen width, in decimal form. (0.45 = 45%)
+Default: 0.45
+
+roms_per_page
+Sets the number of ROMs that will be displayed on each page of the rom list.
+Default: 6
+
+font_file
+Sets the name of the font file that will be loaded for use on the menus. SNeezy looks for fonts in the "resources/fonts" folder.
+Default: "Silkscreen.ttf"
+
+rom_folder
+Sets the relative path of the folder that SNeezy will look for ROMs in.
+Default: "roms/"
+
+sort_roms
+If set to Yes, SNeezy will sort the ROMs in alphabetical order before displaying them. If set to No, SNeezy will not attempt to sort the ROMs.
+Default: Yes
+
+boxart_folder
+Sets the relative path of the folder that SNeezy will look for box art in.
+Default: "boxart/"
+
+load_boxart
+If set to Yes, SNeezy will attempt to load box art from the specified box art folder. If set to No, SNeezy will display a generic box art image.
+Default: Yes
+
+threaded_boxart_loader
+If set to Yes, SNeezy will lazy load box art from a thread as games are selected. If set to No, SNeezy will load all of the box art while starting up.
+Default: No
+
+emulator_path
+Sets the relative path of the emulator that SNeezy will open ROM files with.
+Default: "pisnes/snes9x"
+
+= [Colors] =
+
+background
+Sets the background color of the menu.
+Default: "215,215,215"
+
+text
+Sets the color of text.
+Default: "15,15,15"
+
+text_highlighted
+Sets the color of text on a highlighted menu item.
+Default: "245,245,245"
+
+item
+Sets the background color of menu items.
+Default: "255,255,255"
+
+item_highlighted
+Sets the background color of highlighted menu items.
+Default: "228,41,36"
+
+header
+Sets the background color of the header at the top of the screen.
+Default: "255,255,255"
+
+-----------------
+-- volume.yaml --
+-----------------
+
+volume
+This is the volume level that was saved the last time the system shut down. You may change it if you wish. The range is from 0 to 100.
+Default: 70

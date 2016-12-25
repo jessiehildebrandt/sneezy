@@ -1,0 +1,24 @@
+options:
+  screen_width: 0
+  screen_height: 0
+  max_fps: 30
+  fullscreen: Yes
+  font_size: 26
+  header_height: 0.175
+  item_gap: 0.05
+  icon_size: 0.45
+  roms_per_page: 6
+  font_file: "Silkscreen.ttf"
+  rom_folder: "roms/"
+  sort_roms: Yes
+  boxart_folder: "boxart/"
+  load_boxart: Yes
+  threaded_boxart_loader: No
+  emulator_path: "pisnes/snes9x"
+colors:
+  background: "215,215,215"
+  text: "15,15,15"
+  text_highlighted: "245,245,245"
+  item: "255,255,255"
+  item_highlighted: "228,41,36"
+  header: "255,255,255"

@@ -1,0 +1,13 @@
+# ~/.profile: executed by Bourne-compatible login shells.
+
+if [ "$BASH" ]; then
+  if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+  fi
+fi
+
+mesg n
+
+# Automatically start up SNeezy as soon as the user logs in. If it closes, automatically log out.
+cd sneezy
+python launch-sneezy.py && logout
